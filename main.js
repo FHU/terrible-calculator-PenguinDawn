@@ -13,6 +13,16 @@ function calculate() {
     let used = operatorSelect.value;
     let answer = 0;
 
+    if(isNaN(num1)) {
+        answer = "Input 1 is a wrong type or missing!";
+        result.innerText = answer;
+        return;
+    } else if(isNaN(num2)) {
+        answer = "Input 2 is a wrong type or missing!";
+        result.innerText = answer;
+        return;
+    } 
+
 
     if(used === "+") {
         answer = num1 + num2;
@@ -24,11 +34,10 @@ function calculate() {
         answer = num1 / num2;
     }
 
-    if(num1 == "" || typeof(num1) != "int") {
-        answer = "Input 1 is missing or a wrong type!";
-    } else if(num2 == "" || typeof(num2) != "int") {
-        answer = "Input 2 is missing or a wrong type!";
-    }
+    
+    // else if(typeof(num1) != "int" || typeof(num2) != "int") {
+    //     answer = "One of the inputs is a wrong type!";
+    // }
 
     result.innerText = answer;
 }
