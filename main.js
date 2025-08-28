@@ -13,6 +13,7 @@ function calculate() {
     let used = operatorSelect.value;
     let answer = 0;
 
+
     if(used === "+") {
         answer = num1 + num2;
     } else if(used === "-") {
@@ -21,6 +22,12 @@ function calculate() {
         answer = num1 * num2;
     } else if (used === "/"){
         answer = num1 / num2;
+    }
+
+    if(num1 == "" || typeof(num1) != "int") {
+        answer = "Input 1 is missing or a wrong type!";
+    } else if(num2 == "" || typeof(num2) != "int") {
+        answer = "Input 2 is missing or a wrong type!";
     }
 
     result.innerText = answer;
